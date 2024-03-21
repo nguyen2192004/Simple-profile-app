@@ -79,7 +79,9 @@ class SignUpForm extends StatelessWidget {
               elevation: 0,
               textStyle: const TextStyle(fontSize: 18),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             child: const Text("Sign up"),
           ),
         ],

@@ -53,15 +53,15 @@ class SignUpForm extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          InputField(
+          const InputField(
             hintText: 'Email',
           ),
           const SizedBox(height: 20),
-          InputField(
+          const InputField(
             hintText: 'Password',
           ),
           const SizedBox(height: 20),
-          InputField(
+          const InputField(
             hintText: 'Confirm Password',
           ),
           const SizedBox(height: 50),
@@ -90,7 +90,7 @@ class SignUpForm extends StatelessWidget {
 
 class InputField extends StatelessWidget {
   final String hintText;
-  const InputField({required this.hintText});
+  const InputField({required this.hintText, super.key});
 
   @override
   Widget build(BuildContext context) {

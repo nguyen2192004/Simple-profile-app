@@ -16,12 +16,12 @@ class MyApp extends StatelessWidget {
         // Use switch to provide routes for different route names
         switch (settings.name) {
           case '/':
-            return MaterialPageRoute(builder: (_) => SignInScreen());
+            return MaterialPageRoute(builder: (_) => const SignInScreen());
           case '/signup':
-            return MaterialPageRoute(builder: (_) => SignUpScreen());
+            return MaterialPageRoute(builder: (_) => const SignUpScreen());
           // can add more cases here for more screens
           default:
-            return MaterialPageRoute(builder: (_) => SignInScreen());
+            return MaterialPageRoute(builder: (_) => const SignInScreen());
         }
       },
       initialRoute: '/',

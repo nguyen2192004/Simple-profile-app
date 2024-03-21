@@ -57,7 +57,9 @@ class SignInScreen extends StatelessWidget {
                         color: Colors.red,
                       ),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
                         child: const Text('Login',
                             style: TextStyle(color: Colors.white)),
                       ),

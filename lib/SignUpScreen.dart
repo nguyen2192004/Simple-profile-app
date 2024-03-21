@@ -5,81 +5,111 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            body: Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/background.jpg'),
-          fit: BoxFit.cover,
+      home: Scaffold(
+        body: Stack(
+          children: [
+            BackgroundImage(),
+            Positioned.fill(
+              child: Container(color: Colors.black.withOpacity(0.5)),
+            ),
+            Center(
+              child: SignUpForm(),
+            ),
+          ],
         ),
       ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              const SizedBox(height: 200),
-              Center(
-                child: Container(
-                  width: 500,
-                  child: const TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Enter your username'),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Center(
-                child: Container(
-                  width: 500,
-                  child: const TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Enter your password'),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                width: 500,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.red,
-                ),
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text('Login',
-                      style: TextStyle(color: Colors.white)),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Don\'t have an account?',
-                        style: TextStyle(color: Colors.white)),
-                    const SizedBox(width: 10),
-                    Container(
-                      width: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.red,
-                      ),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: const Text('Sign up'),
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
+    );
+  }
+}
+
+class BackgroundImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      'assets/hero.jpg',
+      fit: BoxFit.cover,
+      width: double.infinity,
+      height: double.infinity,
+    );
+  }
+}
+
+class SignUpForm extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 360,
+      height: 500,
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      color: Colors.black.withOpacity(0.8),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Sign up",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 34,
+              fontWeight: FontWeight.w500,
+            ),
           ),
+          const SizedBox(height: 20),
+          InputField(
+            hintText: 'Email',
+          ),
+          const SizedBox(height: 20),
+          InputField(
+            hintText: 'Password',
+          ),
+          const SizedBox(height: 20),
+          InputField(
+            hintText: 'Confirm Password',
+          ),
+          const SizedBox(height: 50),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(300, 60),
+              backgroundColor: const Color(0xffe50914),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              elevation: 0,
+              textStyle: const TextStyle(fontSize: 18),
+            ),
+            onPressed: () {},
+            child: const Text("Sign up"),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class InputField extends StatelessWidget {
+  final String hintText;
+  const InputField({required this.hintText});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      style: const TextStyle(color: Colors.white),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color(0xff313131),
+        hintText: hintText,
+        hintStyle: const TextStyle(color: Colors.white54),
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.white),
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.white),
+          borderRadius: BorderRadius.circular(10.0),
         ),
       ),
-    )));
+    );
   }
 }

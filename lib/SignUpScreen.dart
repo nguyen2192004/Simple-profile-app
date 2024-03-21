@@ -4,19 +4,17 @@ class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          children: [
-            BackgroundImage(),
-            Positioned.fill(
-              child: Container(color: Colors.black.withOpacity(0.5)),
-            ),
-            Center(
-              child: SignUpForm(),
-            ),
-          ],
-        ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          BackgroundImage(),
+          Positioned.fill(
+            child: Container(color: Colors.black.withOpacity(0.5)),
+          ),
+          Center(
+            child: SignUpForm(),
+          ),
+        ],
       ),
     );
   }

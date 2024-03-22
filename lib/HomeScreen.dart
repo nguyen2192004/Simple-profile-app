@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'BigPosterInHomeScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,8 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
         length: 4,
         child: Theme(
           data: ThemeData(brightness: Brightness.dark),
-          child: const Scaffold(
-            bottomNavigationBar: TabBar(
+          child: Scaffold(
+            body: BigPosterInHomeScreen(),
+            bottomNavigationBar: const TabBar(
               tabs: [
                 Tab(
                   icon: Icon(Icons.home),

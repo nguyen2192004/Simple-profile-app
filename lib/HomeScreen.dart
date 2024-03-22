@@ -17,6 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(actions: [
+        
+        TextButton(onPressed :, child: )
+      ]),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

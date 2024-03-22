@@ -13,15 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //set the theme for bottom navigation bar
-      theme: ThemeData(
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          //set linear gradient for bottom navigation bar
-
-          selectedItemColor: Colors.red,
-          unselectedItemColor: Colors.red,
-        ),
-      ),
       onGenerateRoute: (settings) {
         // Use switch to provide routes for different route names
         switch (settings.name) {

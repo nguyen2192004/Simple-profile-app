@@ -16,40 +16,35 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(actions: [
-        
-        TextButton(onPressed :, child: )
-      ]),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.black, Colors.red],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+    return DefaultTabController(
+        length: 4,
+        child: Theme(
+          data: ThemeData(brightness: Brightness.dark),
+          child: const Scaffold(
+            bottomNavigationBar: TabBar(
+              tabs: [
+                Tab(
+                  icon: Icon(Icons.home),
+                  text: 'Home',
+                ),
+                Tab(
+                  icon: Icon(Icons.search),
+                  text: 'Search',
+                ),
+                Tab(
+                  icon: Icon(Icons.download),
+                  text: 'Download',
+                ),
+                Tab(
+                  icon: Icon(Icons.person),
+                  text: 'Profile',
+                ),
+              ],
+              unselectedLabelColor: Color(0xff999999),
+              labelColor: Colors.white,
+              indicatorColor: Colors.transparent,
+            ),
           ),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.black, Colors.red],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: BottomNavigationBar(
-            backgroundColor: Colors.transparent,
-            unselectedItemColor: Colors.red,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.search), label: 'Search'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.download), label: 'Download'),
-              BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
-            ]),
-      ),
-    );
+        ));
   }
 }
